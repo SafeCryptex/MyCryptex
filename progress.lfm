@@ -1,0 +1,38 @@
+object ProgressForm: TProgressForm
+  Left = 661
+  Height = 63
+  Top = 424
+  Width = 474
+  BorderIcons = [biSystemMenu]
+  Caption = 'My Cryptex'
+  ClientHeight = 63
+  ClientWidth = 474
+  FormStyle = fsStayOnTop
+  OnCloseQuery = FormCloseQuery
+  Position = poMainFormCenter
+  LCLVersion = '2.2.6.0'
+  object Label1: TLabel
+    Left = 19
+    Height = 17
+    Top = 13
+    Width = 274
+    Caption = 'Encryption is being processed, please wait ...'
+    Font.Style = [fsBold, fsItalic]
+    ParentColor = False
+    ParentFont = False
+  end
+  object ProgressBar1: TProgressBar
+    Left = 0
+    Height = 20
+    Top = 43
+    Width = 474
+    Align = alBottom
+    TabOrder = 0
+  end
+  object Timer1: TTimer
+    Interval = 200
+    OnTimer = Timer1Timer
+    Left = 186
+    Top = 36
+  end
+end

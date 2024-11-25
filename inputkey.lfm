@@ -1,0 +1,154 @@
+object inputkeyForm: TinputkeyForm
+  Left = 401
+  Height = 288
+  Top = 246
+  Width = 402
+  BorderIcons = [biSystemMenu]
+  Caption = 'Enter password'
+  ClientHeight = 288
+  ClientWidth = 402
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  OnShow = FormShow
+  ParentBiDiMode = False
+  Position = poMainFormCenter
+  LCLVersion = '2.2.6.0'
+  object Label1: TLabel
+    Left = 32
+    Height = 17
+    Top = 8
+    Width = 247
+    Caption = 'Please enter password hint and password:'
+    ParentColor = False
+  end
+  object edthint: TLabeledEdit
+    Left = 96
+    Height = 25
+    Top = 40
+    Width = 263
+    EditLabel.Height = 17
+    EditLabel.Width = 26
+    EditLabel.Caption = 'Hint:'
+    EditLabel.ParentColor = False
+    LabelPosition = lpLeft
+    LabelSpacing = 8
+    TabOrder = 0
+  end
+  object edtkey: TLabeledEdit
+    Left = 96
+    Height = 25
+    Top = 72
+    Width = 228
+    EchoMode = emPassword
+    EditLabel.Height = 17
+    EditLabel.Width = 59
+    EditLabel.Caption = 'Password:'
+    EditLabel.ParentColor = False
+    LabelPosition = lpLeft
+    LabelSpacing = 8
+    PasswordChar = '*'
+    TabOrder = 1
+    OnChange = edtkeyChange
+    OnKeyPress = edtkeyKeyPress
+  end
+  object btnhide: TSpeedButton
+    Left = 326
+    Height = 22
+    Hint = 'Plaintext'
+    Top = 72
+    Width = 33
+    Caption = '000'
+    Visible = False
+    OnClick = btnhideClick
+    ShowHint = True
+    ParentShowHint = False
+  end
+  object Bevel1: TBevel
+    Left = 72
+    Height = 1
+    Top = 106
+    Width = 272
+  end
+  object btnlook: TSpeedButton
+    Left = 326
+    Height = 22
+    Hint = 'Ciphertext'
+    Top = 72
+    Width = 33
+    Caption = '***'
+    OnClick = btnlookClick
+    ShowHint = True
+    ParentShowHint = False
+  end
+  object btnok: TBitBtn
+    Left = 192
+    Height = 30
+    Top = 232
+    Width = 75
+    DefaultCaption = True
+    Kind = bkOK
+    ModalResult = 1
+    OnClick = btnokClick
+    TabOrder = 2
+  end
+  object btncancel: TBitBtn
+    Left = 284
+    Height = 30
+    Top = 232
+    Width = 75
+    Cancel = True
+    DefaultCaption = True
+    Kind = bkCancel
+    ModalResult = 2
+    OnClick = btncancelClick
+    TabOrder = 3
+  end
+  object isNo_password_check: TCheckBox
+    Left = 80
+    Height = 21
+    Top = 159
+    Width = 296
+    Caption = 'Bypass Password Verification When Decrypting'
+    TabOrder = 4
+  end
+  object btnQuestion: TBitBtn
+    Left = 56
+    Height = 20
+    Top = 160
+    Width = 22
+    Anchors = [akTop, akRight]
+    BidiMode = bdRightToLeft
+    Kind = bkHelp
+    Margin = 0
+    OnClick = btnQuestionClick
+    ParentBidiMode = False
+    Spacing = 0
+    TabOrder = 5
+  end
+  object RadioGroup_encgrade: TRadioGroup
+    Left = 56
+    Height = 48
+    Top = 112
+    Width = 313
+    AutoFill = True
+    Caption = 'Encryption Strength:'
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 4
+    ClientHeight = 26
+    ClientWidth = 309
+    Columns = 4
+    ItemIndex = 1
+    Items.Strings = (
+      'Fast'
+      'Normal'
+      'Strong'
+      'Extreme'
+    )
+    TabOrder = 6
+  end
+end

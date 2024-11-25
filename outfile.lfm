@@ -1,0 +1,78 @@
+object outFileForm: ToutFileForm
+  Left = 390
+  Height = 193
+  Top = 255
+  Width = 530
+  BorderIcons = [biSystemMenu, biMinimize]
+  Caption = 'File Encryption'
+  ClientHeight = 193
+  ClientWidth = 530
+  OnCreate = FormCreate
+  Position = poMainFormCenter
+  LCLVersion = '2.2.6.0'
+  object edtInputFile: TLabeledEdit
+    Left = 90
+    Height = 25
+    Top = 32
+    Width = 371
+    EditLabel.Height = 17
+    EditLabel.Width = 54
+    EditLabel.Caption = 'Input file:'
+    EditLabel.ParentColor = False
+    LabelPosition = lpLeft
+    LabelSpacing = 8
+    ReadOnly = True
+    TabOrder = 3
+  end
+  object edtOutputFile: TLabeledEdit
+    Left = 90
+    Height = 25
+    Top = 77
+    Width = 371
+    EditLabel.Height = 17
+    EditLabel.Width = 64
+    EditLabel.Caption = 'Output file:'
+    EditLabel.ParentColor = False
+    LabelPosition = lpLeft
+    LabelSpacing = 8
+    ReadOnly = True
+    TabOrder = 4
+  end
+  object btnSaveFile: TBitBtn
+    Left = 466
+    Height = 25
+    Top = 77
+    Width = 34
+    Caption = '...'
+    OnClick = btnSaveFileClick
+    TabOrder = 1
+  end
+  object btnCrypt: TBitBtn
+    Left = 224
+    Height = 38
+    Top = 128
+    Width = 102
+    Caption = 'Encrypt'
+    Kind = bkRetry
+    Images = mainForm.ImageList1
+    OnClick = btnCryptClick
+    TabOrder = 2
+  end
+  object btnLoadFile: TBitBtn
+    Left = 466
+    Height = 25
+    Top = 32
+    Width = 34
+    Caption = '...'
+    OnClick = btnLoadFileClick
+    TabOrder = 0
+  end
+  object SaveDialog1: TSaveDialog
+    Left = 136
+    Top = 120
+  end
+  object OpenDialog1: TOpenDialog
+    Left = 64
+    Top = 104
+  end
+end
